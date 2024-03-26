@@ -1,5 +1,15 @@
-import { configureStore, Provider } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { reducer as todoReducer } from './todos-slice';
 
-const store = configureStore({});
+const reducers = combineReducers({
+  // ! this name then will be called as a property on a state obj
+  todos: todoReducer,
+});
 
-export default store;
+export const store = configureStore({
+  reducer: reducers,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+});

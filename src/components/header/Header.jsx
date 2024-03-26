@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
   return (
     <header className={styles.header}>
+      <h2>Todo App</h2>
       <ul className={styles.navigation}>
         <li>
           <NavLink

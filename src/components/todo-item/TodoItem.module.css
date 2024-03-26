@@ -1,0 +1,46 @@
+.item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 0.5px solid rgb(109, 108, 108);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 900px;
+  height: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.item img {
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.item h2 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.controls {
+  min-width: 160px;
+}
+
+.controls button {
+  display: block;
+  margin-bottom: 5px;
+  background-color: #ccc;
+  cursor: pointer;
+  display: block;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  padding: 9px 18px;
+  font-size: 17px;
+  transition: background-color ease-in-out 0.4s;
+}
+
+.controls button:hover {
+  background-color: #cccccc9d;
+}
