@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './reset.css';
 import './index.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {
+  RouteObject,
+  RouterProvider,
+  createBrowserRouter,
+} from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import HomePage from './pages/home/HomePage.jsx';
@@ -23,12 +27,14 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+interface IProps {
+  children: React.ReactNode;
+}
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router}>
-        <App />
-      </RouterProvider>
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>,
 );

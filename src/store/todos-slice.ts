@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { ITodo } from '../types/todos.types';
 
-const initialState = [];
+const initialState: ITodo[] = [];
 
 // TODO: to work on a design, authentication
 
@@ -9,7 +10,8 @@ const todoSlice = createSlice({
   initialState: initialState,
   reducers: {
     addTodo(state, action) {
-      const todo = action.payload;
+      const todo: ITodo = action.payload;
+      console.log(todo);
       state.push(todo);
     },
 

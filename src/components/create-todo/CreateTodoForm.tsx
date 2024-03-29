@@ -1,30 +1,29 @@
 import React, { useRef } from 'react';
 import styles from './CreateTodo.module.css';
 import { useActions } from '../../hooks/useActions';
+import { ITodo } from '../../types/todos.types';
 
 const CreateTodoForm = () => {
   const { addTodo } = useActions();
 
-  const title = useRef();
-  const image = useRef();
-  const date = useRef();
+  const title = useRef<HTMLInputElement>();
+  const image = useRef<HTMLInputElement>();
+  const date = useRef<HTMLInputElement>();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     console.log('submitted');
-
-    console.log(date.current.value);
     addTodo({
-      id: Math.random(0, 100).toFixed(2),
-      title: title.current.value,
+      id: Math.random().toFixed(2),
+      title: title.current!.value,
       // image: image.current.value,
-      date: new Date(date.current.value),
+      date: new Date(date.current!.value),
     });
 
-    title.current.value = '';
-    // image.current.value = '';
-    date.current.value = '';
+    title.current!.value = '';
+    image.current!.value = '';
+    date.current!.value = '';
   };
 
   return (
